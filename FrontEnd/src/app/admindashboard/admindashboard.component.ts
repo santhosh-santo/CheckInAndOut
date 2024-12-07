@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormsModule } from '@angular/forms'; 
 
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule 
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AdmineService, Attendance, Employee } from '../service/adminservice.service'; 
 
@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 
   standalone: true, 
 
-  imports: [CommonModule, FormsModule, HttpClientModule], // Add HttpClientModule 
+  imports: [CommonModule, FormsModule, HttpClientModule], 
 
   templateUrl: './admindashboard.component.html', 
 
@@ -44,11 +44,11 @@ export class AdmindashboardComponent implements OnInit {
 
   constructor(private adminService: AdmineService,private router: Router) {} 
 
-  // Implement the lifecycle hook 
+  
 
   ngOnInit(): void { 
 
-    // Optionally load default data on initialization 
+    
 
     this.loadEmployees(); 
 

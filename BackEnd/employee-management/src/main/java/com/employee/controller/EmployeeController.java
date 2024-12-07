@@ -26,13 +26,13 @@ public class EmployeeController {
 
     } 
 
-    // Add an employee
+    
     @PostMapping("/add")
     public Employee addEmployee(@RequestBody Employee employee) {
         return service.addEmployee(employee);
     }
 
-    // Get all employees
+   
     @GetMapping("/all")
     public List<Employee> getAllEmployees() {
         return service.getAllEmployees();
@@ -44,7 +44,7 @@ public class EmployeeController {
         Map<String, Object> response = new HashMap<>();
         if (employee != null) {
             response.put("isValid", true);
-            response.put("name", employee.getName()); // Assuming `Employee` has a `getName` method
+            response.put("name", employee.getName()); 
         } else {
             response.put("isValid", false);
             response.put("name", null);
@@ -52,13 +52,13 @@ public class EmployeeController {
         return response;
     }
 
-    // Update an employee
+    
     @PutMapping("/update/{id}")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         return service.updateEmployee(id, employee).orElseThrow(() -> new RuntimeException("Employee not found"));
     }
 
-    // Delete an employee
+    
     @DeleteMapping("/delete/{id}")
     public void deleteEmployee(@PathVariable Long id) {
         service.deleteEmployee(id);
@@ -76,7 +76,7 @@ public class EmployeeController {
 
     Object attendanceDetails = restTemplate.getForObject(attendanceServiceUrl, Object.class); 
 
-    return attendanceDetails; // Return the response received from Attendance Service 
+    return attendanceDetails; 
 
     } 
 }

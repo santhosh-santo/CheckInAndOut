@@ -1,4 +1,4 @@
-/* General Styles */ 
+
 
 body { 
 
@@ -44,11 +44,11 @@ h3 {
 
  
 
-/* Buttons */ 
+
 
 .dashboard-button { 
 
-  background-color: #4CAF50; /* Green */ 
+  background-color: #4CAF50; 
 
   color: white; 
 
@@ -88,7 +88,7 @@ h3 {
 
  
 
-/* Red Delete Button */ 
+
 
 .dashboard-button.delete { 
 
@@ -112,9 +112,7 @@ h3 {
 
 } 
 
- 
 
-/* Forms */ 
 
 form { 
 
@@ -168,7 +166,6 @@ input[type="text"]:focus {
 
  
 
-/* Table Styles */ 
 
 table { 
 
@@ -212,7 +209,7 @@ tr:hover {
 
  
 
-/* Table for Attendance Records */ 
+
 
 .table-attendance th, 
 
@@ -240,7 +237,6 @@ tr:hover {
 
  
 
-/* Specific Section Display */ 
 
 div { 
 
@@ -250,7 +246,6 @@ div {
 
  
 
-/* Responsive Design */ 
 
 @media (max-width: 768px) { 
 

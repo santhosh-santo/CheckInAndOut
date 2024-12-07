@@ -17,9 +17,8 @@ export class EmployeeserviceService {
     
     getEmployeeDetails(empId: number) {
       const url = `http://localhost:8080/api/employees/${empId}`;
-      return this.http.get(url); // Expects a Map<String, Object> response
+      return this.http.get(url); 
     }
-  
     
 
     checkOut(empId: number) {

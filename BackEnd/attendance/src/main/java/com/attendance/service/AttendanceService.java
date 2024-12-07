@@ -24,19 +24,19 @@ public class AttendanceService {
         String employeeServiceUrl = "http://localhost:8080/api/employees/" + empId;
 
         try {
-            // Fetch employee details from Employee Management Service
+            
             Map<String, Object> employeeDetails = restTemplate.getForObject(employeeServiceUrl, Map.class);
 
             if (employeeDetails != null && (Boolean) employeeDetails.get("isValid")) {
                 String employeeName = (String) employeeDetails.get("name");
 
-                // Check if the employee already has an active check-in
+                
                 Attendance existingAttendance = attendanceRepository.findTopByEmpIdOrderByIdDesc(empId);
                 if (existingAttendance != null && existingAttendance.getCheckOutTime() == null) {
                     return "Employee ID: " + empId + " (" + employeeName + ") already has an active check-in. Please check-out first.";
                 }
 
-                // Create new attendance record
+                
                 Attendance attendance = new Attendance();
                 attendance.setEmpId(empId);
                 attendance.setCheckInTime(LocalDateTime.now());
@@ -55,7 +55,7 @@ public class AttendanceService {
 
     public String checkOut(int empId) { 
 
-    	// Get the latest check-in record for the employee 
+    	
 
     	Attendance attendance = attendanceRepository.findTopByEmpIdOrderByIdDesc(empId); 
 
@@ -65,13 +65,13 @@ public class AttendanceService {
 
     	} 
 
-    	// Record the check-out time 
+    	
 
     	LocalDateTime checkOutTime = LocalDateTime.now(); 
 
     	attendance.setCheckOutTime(checkOutTime); 
 
-    	// Calculate total hours worked 
+    	
 
     	Duration duration = Duration.between(attendance.getCheckInTime(), checkOutTime); 
 
@@ -79,13 +79,13 @@ public class AttendanceService {
 
     	long minutes = duration.toMinutes() % 60; 
 
-    	// Save the record 
+    	/
 
-    	attendance.setWorkingHours(String.format("%02d:%02d", hours, minutes)); // Store as HH:MM format 
+    	attendance.setWorkingHours(String.format("%02d:%02d", hours, minutes)); 
 
     	attendanceRepository.save(attendance); 
 
-    	// Return response 
+    	
 
     	return "Check-out successful. Total hours worked: " + String.format("%02d:%02d", hours, minutes); 
 
@@ -93,7 +93,7 @@ public class AttendanceService {
 
     	public List<Attendance> getAllAttendanceDetails() { 
 
-    	// Fetch all records from the Attendance table 
+    	
 
     	return attendanceRepository.findAll(); 
 

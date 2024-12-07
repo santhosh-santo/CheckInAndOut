@@ -26,7 +26,7 @@ import { EmployeeserviceService } from '../service/employeeservice.service';
 
 export class EmployeeComponent { 
   empId!: number; 
-  empName: string = ''; // To store the fetched employee name
+  empName: string = ''; 
   attendanceDetails: any[] = []; 
 
   constructor(private attendanceService: EmployeeserviceService, private router: Router) {} 
@@ -36,7 +36,7 @@ export class EmployeeComponent {
     if (this.empId) {
       this.attendanceService.getEmployeeDetails(this.empId).subscribe((response: any) => {
         if (response.isValid) {
-          this.empName = response.name; // Display the employee name
+          this.empName = response.name; 
         } else {
           this.empName = 'Invalid Employee ID';
         }
@@ -47,9 +47,7 @@ export class EmployeeComponent {
   // Check-In Method
   checkIn() {
     this.attendanceService.checkIn(this.empId).subscribe((response: string) => {
-      alert(response); // Show the check-in response
-
-      // Reset the Employee ID and Name fields
+      alert(response); 
       this.resetFields();
     });
   }
@@ -58,13 +56,11 @@ export class EmployeeComponent {
   checkOut() {
     this.attendanceService.checkOut(this.empId).subscribe(
       (response: { message: string; workingHours: string }) => {
-        alert(`${response.message}`); // Show the check-out response
-
-        // Reset the Employee ID and Name fields
+        alert(`${response.message}`); 
         this.resetFields();
       },
       (error) => {
-        console.error('Error during check-out:', error); // Log errors if any
+        console.error('Error during check-out:', error); 
         alert('An error occurred during check-out.');
       }
     );
@@ -78,7 +74,7 @@ export class EmployeeComponent {
 
   // Reset Fields
   resetFields() {
-    this.empId = null as any; // Clear the Employee ID
-    this.empName = ''; // Clear the Employee Name
+    this.empId = null as any; 
+    this.empName = ''; 
   }
 }

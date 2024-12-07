@@ -38,7 +38,7 @@ public class EmployeeService {
     }
     
     public Employee getEmployeeById(Long empId) {
-        // Use findById with Long type
+        
         return repository.findById(empId).orElse(null);
     }
 

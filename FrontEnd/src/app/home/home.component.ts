@@ -30,7 +30,7 @@ export class HomeComponent {
 
     console.log('Navigating to Admin'); 
 
-    this.router.navigate(['/admin']); // Navigate to the Admin Login page 
+    this.router.navigate(['/admin']); 
 
   } 
 

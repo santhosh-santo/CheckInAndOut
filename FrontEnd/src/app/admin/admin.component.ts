@@ -32,11 +32,10 @@ export class AdminComponent {
 
   password: string = ''; 
 
-  loginError: string = ''; // Add this property to handle login errors 
-
+  loginError: string = ''; 
  
 
-  // Hardcoded credentials for front-end-only authentication 
+
 
   private staticAdminId = 'admin123'; 
 
@@ -70,9 +69,7 @@ export class AdminComponent {
 
       console.log('Navigating to dashboard...'); 
 
-      this.loginError = ''; // Clear the error on successful login 
-
-      // Redirect to dashboard or perform other actions 
+      this.loginError = ''; 
 
     } 
 

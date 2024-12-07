@@ -20,7 +20,7 @@ public class Attendance {
 
     private LocalDateTime checkOutTime;
 
-    private String workingHours; // To store the total working hours
+    private String workingHours; 
     
     
 

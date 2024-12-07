@@ -10,15 +10,15 @@ export interface Employee {
 }
 
 export interface Attendance {
-  id: number; // Attendance record ID
-  empId: number; // Employee ID
-  checkInTime: string; // Check-in time
-  checkOutTime: string; // Check-out time
-  workingHours: string; // Total working hours
+  id: number; 
+  empId: number; 
+  checkInTime: string; 
+  checkOutTime: string; 
+  workingHours: string; 
 }
 
 @Injectable({
-  providedIn: 'root',  // This ensures the service is available app-wide
+  providedIn: 'root', 
 })
 export class AdmineService {
   private baseUrl = 'http://localhost:8080/api/employees'; // Backend base URL

@@ -9,14 +9,14 @@ export class authgaurdGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
-    // Check if the admin is logged in
+    
     const isLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
 
     if (isLoggedIn) {
-      return true; // Allow access to the route
+      return true; 
     }
 
-    // Redirect to the admin login page if not logged in
+   
     this.router.navigate(['/admin']);
     return false;
   }
