@@ -1,0 +1,163 @@
+<span><button (click)="back()">back</button></span><body> 
+
+  <div class="dashboard-container"> 
+  
+    <button (click)="selectAction('add')" class="dashboard-button">Add Employee</button> 
+  
+    <button (click)="selectAction('edit-delete')" class="dashboard-button">Edit/Delete Employee</button> 
+  
+    <button (click)="selectAction('view')" class="dashboard-button">View Employee</button> 
+  
+    <button (click)="selectAction('attendance')" class="dashboard-button">View Attendance</button> 
+  
+     
+  
+   
+  
+   <!-- View Attendance Section --> 
+  
+   <div *ngIf="currentAction === 'attendance'"> 
+  
+    <h3>Attendance Details</h3> 
+  
+    <table class="table-attendance"> 
+  
+      <tr> 
+  
+        <th>ID</th> 
+  
+        <th>Employee ID</th> 
+  
+        <th>Check-In Time</th> 
+  
+        <th>Check-Out Time</th> 
+  
+        <th>Working Hours</th> 
+  
+      </tr> 
+  
+      <tr *ngFor="let record of attendanceRecords"> 
+  
+        <td>{{ record.id }}</td> 
+  
+        <td>{{ record.empId }}</td> 
+  
+        <td>{{ record.checkInTime | date:'medium' }}</td> 
+  
+        <td>{{ record.checkOutTime | date:'medium' }}</td> 
+  
+        <td>{{ record.workingHours }}</td> 
+  
+      </tr> 
+  
+    </table> 
+  
+  </div> 
+  
+   
+  
+    <div *ngIf="currentAction === 'add'"> 
+  
+      <h3>Add Employee</h3> 
+  
+      <form> 
+  
+        <label>Employee ID:</label> 
+  
+        <input type="number" [(ngModel)]="newEmployee.id" name="id" required /> 
+  
+        <label>Name:</label> 
+  
+        <input type="text" [(ngModel)]="newEmployee.name" name="name" required /> 
+  
+        <label>Role:</label> 
+  
+        <input type="text" [(ngModel)]="newEmployee.role" name="role" required /> 
+  
+        <label>Department:</label> 
+  
+        <input type="text" [(ngModel)]="newEmployee.department" name="department" required /> 
+  
+        <button type="button" (click)="addEmployee()" class="dashboard-button">Add</button> 
+  
+      </form> 
+  
+    </div> 
+  
+   
+  
+    <div *ngIf="currentAction === 'edit-delete'"> 
+  
+      <h3>Edit/Delete Employee</h3> 
+  
+      <form> 
+  
+        <label>Search Employee ID:</label> 
+  
+        <input type="number" [(ngModel)]="searchEmployeeId" name="searchEmployeeId" /> 
+  
+        <button type="button" (click)="searchEmployee()" class="dashboard-button">Search</button> 
+  
+        <div *ngIf="foundEmployee"> 
+  
+          <label>Name:</label> 
+  
+          <input type="text" [(ngModel)]="foundEmployee.name" name="foundName" /> 
+  
+          <label>Role:</label> 
+  
+          <input type="text" [(ngModel)]="foundEmployee.role" name="foundRole" /> 
+  
+          <label>Department:</label> 
+  
+          <input type="text" [(ngModel)]="foundEmployee.department" name="foundDepartment" /> 
+  
+          <button type="button" (click)="updateEmployee()" class="dashboard-button">Update</button> 
+  
+          <button type="button" (click)="deleteEmployee()" class="dashboard-button delete">Delete</button> 
+  
+        </div> 
+  
+      </form> 
+  
+    </div> 
+  
+   
+  
+    <div *ngIf="currentAction === 'view'"> 
+  
+      <h3>View Employees</h3> 
+  
+      <table> 
+  
+        <tr> 
+  
+          <th>ID</th> 
+  
+          <th>Name</th> 
+  
+          <th>Role</th> 
+  
+          <th>Department</th> 
+  
+        </tr> 
+  
+        <tr *ngFor="let employee of employees"> 
+  
+          <td>{{ employee.id }}</td> 
+  
+          <td>{{ employee.name }}</td> 
+  
+          <td>{{ employee.role }}</td> 
+  
+          <td>{{ employee.department }}</td> 
+  
+        </tr> 
+  
+      </table> 
+  
+    </div> 
+  
+  </div> 
+  
+  </body> 

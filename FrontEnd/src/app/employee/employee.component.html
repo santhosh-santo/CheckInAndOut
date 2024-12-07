@@ -1,0 +1,22 @@
+<span><button (click)="back()">back</button></span><body> 
+
+<body>
+<div class="container">
+  <h1>Attendance System</h1>
+
+  <input
+    type="number"
+    [(ngModel)]="empId"
+    placeholder="Enter Employee ID"
+    (blur)="fetchEmployeeName()" />
+
+  <input
+    type="text"
+    [value]="empName"
+    placeholder="Employee Name"
+    disabled />
+
+  <button (click)="checkIn()">Check In</button>
+  <button (click)="checkOut()">Check Out</button>
+</div>
+</body>

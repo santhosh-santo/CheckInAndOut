@@ -1,0 +1,249 @@
+/* Global Styles */ 
+
+* { 
+
+  margin: 0; 
+
+  padding: 0; 
+
+  box-sizing: border-box; 
+
+  font-family: Arial, sans-serif; 
+
+} 
+
+ 
+
+body { 
+
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */ 
+
+  height: 100vh; 
+
+  display: flex; 
+
+  justify-content: center; 
+
+  align-items: center; 
+
+} 
+
+ 
+
+.login-container { 
+
+  background-color: rgba(255, 255, 255, 0.9); /* Light background for form */ 
+
+  padding: 30px; 
+
+  border-radius: 10px; 
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+  width: 100%; 
+
+  max-width: 400px; 
+
+} 
+
+ 
+
+h1 { 
+
+  text-align: center; 
+
+  font-size: 2rem; 
+
+  margin-bottom: 20px; 
+
+  color: #333; 
+
+} 
+
+ 
+
+.form-group { 
+
+  margin-bottom: 20px; 
+
+} 
+
+ 
+
+label { 
+
+  font-size: 1rem; 
+
+  color: #333; 
+
+  display: block; 
+
+  margin-bottom: 5px; 
+
+} 
+
+ 
+
+input { 
+
+  width: 100%; 
+
+  padding: 10px; 
+
+  font-size: 1rem; 
+
+  border: 1px solid #ccc; 
+
+  border-radius: 5px; 
+
+  outline: none; 
+
+  transition: border-color 0.3s ease; 
+
+} 
+
+ 
+
+input:focus { 
+
+  border-color: #ff7e5f; 
+
+} 
+
+ 
+
+button.custom-button { 
+
+  width: 100%; 
+
+  padding: 12px; 
+
+  font-size: 1.2rem; 
+
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient button */ 
+
+  border: none; 
+
+  border-radius: 5px; 
+
+  color: white; 
+
+  cursor: pointer; 
+
+  transition: background 0.3s ease; 
+
+} 
+
+ 
+
+button.custom-button:hover { 
+
+  background: linear-gradient(to right, #feb47b, #ff7e5f); 
+
+} 
+
+ 
+
+button.custom-button:disabled { 
+
+  background: #ccc; 
+
+  cursor: not-allowed; 
+
+} 
+
+ 
+
+p.error-message { 
+
+  color: #d9534f; 
+
+  text-align: center; 
+
+  font-size: 1rem; 
+
+  margin-top: 15px; 
+
+} 
+
+ 
+
+/* Responsive Design */ 
+
+@media (max-width: 768px) { 
+
+  .login-container { 
+
+    width: 90%; 
+
+    padding: 20px; 
+
+  } 
+
+ 
+
+  h1 { 
+
+    font-size: 1.5rem; 
+
+  } 
+
+ 
+
+  input { 
+
+    font-size: 0.9rem; 
+
+    padding: 8px; 
+
+  } 
+
+ 
+
+  button.custom-button { 
+
+    font-size: 1rem; 
+
+  } 
+
+} 
+
+ 
+
+@media (max-width: 480px) { 
+
+  .login-container { 
+
+    padding: 15px; 
+
+  } 
+
+ 
+
+  h1 { 
+
+    font-size: 1.2rem; 
+
+  } 
+
+ 
+
+  input { 
+
+    font-size: 0.8rem; 
+
+    padding: 6px; 
+
+  } 
+
+ 
+
+  button.custom-button { 
+
+    font-size: 0.9rem; 
+
+    padding: 10px; 
+
+  } 
+
+} 

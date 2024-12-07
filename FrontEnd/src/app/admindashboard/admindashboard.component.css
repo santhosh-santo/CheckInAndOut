@@ -1,0 +1,285 @@
+/* General Styles */ 
+
+body { 
+
+  font-family: Arial, sans-serif; 
+
+  margin: 0; 
+
+  padding: 0; 
+
+  background-color: #f4f4f4; 
+
+} 
+
+ 
+
+.dashboard-container { 
+
+  width: 80%; 
+
+  margin: 20px auto; 
+
+  background-color: #fff; 
+
+  padding: 20px; 
+
+  border-radius: 8px; 
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+
+} 
+
+ 
+
+h3 { 
+
+  font-size: 1.5em; 
+
+  color: #333; 
+
+  margin-bottom: 20px; 
+
+} 
+
+ 
+
+/* Buttons */ 
+
+.dashboard-button { 
+
+  background-color: #4CAF50; /* Green */ 
+
+  color: white; 
+
+  border: none; 
+
+  padding: 12px 20px; 
+
+  text-align: center; 
+
+  font-size: 1em; 
+
+  cursor: pointer; 
+
+  border-radius: 5px; 
+
+  margin: 5px; 
+
+  transition: background-color 0.3s ease; 
+
+} 
+
+ 
+
+.dashboard-button:hover { 
+
+  background-color: #45a049; 
+
+} 
+
+ 
+
+.dashboard-button:active { 
+
+  background-color: #3e8e41; 
+
+} 
+
+ 
+
+/* Red Delete Button */ 
+
+.dashboard-button.delete { 
+
+  background-color: #f44336; /* Red */ 
+
+} 
+
+ 
+
+.dashboard-button.delete:hover { 
+
+  background-color: #e53935; 
+
+} 
+
+ 
+
+.dashboard-button.delete:active { 
+
+  background-color: #d32f2f; 
+
+} 
+
+ 
+
+/* Forms */ 
+
+form { 
+
+  display: flex; 
+
+  flex-direction: column; 
+
+  gap: 15px; 
+
+} 
+
+ 
+
+label { 
+
+  font-size: 1em; 
+
+  color: #555; 
+
+} 
+
+ 
+
+input[type="number"], 
+
+input[type="text"] { 
+
+  padding: 10px; 
+
+  font-size: 1em; 
+
+  border: 1px solid #ccc; 
+
+  border-radius: 5px; 
+
+  margin-top: 5px; 
+
+} 
+
+ 
+
+input[type="number"]:focus, 
+
+input[type="text"]:focus { 
+
+  border-color: #4CAF50; 
+
+  outline: none; 
+
+} 
+
+ 
+
+/* Table Styles */ 
+
+table { 
+
+  width: 100%; 
+
+  border-collapse: collapse; 
+
+  margin-top: 20px; 
+
+} 
+
+ 
+
+th, td { 
+
+  text-align: left; 
+
+  padding: 12px; 
+
+  border-bottom: 1px solid #ddd; 
+
+} 
+
+ 
+
+th { 
+
+  background-color: #4CAF50; 
+
+  color: white; 
+
+} 
+
+ 
+
+tr:hover { 
+
+  background-color: #f1f1f1; 
+
+} 
+
+ 
+
+/* Table for Attendance Records */ 
+
+.table-attendance th, 
+
+.table-attendance td { 
+
+  text-align: center; 
+
+} 
+
+ 
+
+.table-attendance th { 
+
+  background-color: #2196F3; 
+
+} 
+
+ 
+
+.table-attendance td { 
+
+  background-color: #f9f9f9; 
+
+} 
+
+ 
+
+/* Specific Section Display */ 
+
+div { 
+
+  margin-top: 20px; 
+
+} 
+
+ 
+
+/* Responsive Design */ 
+
+@media (max-width: 768px) { 
+
+  .dashboard-container { 
+
+    width: 95%; 
+
+  } 
+
+ 
+
+  .dashboard-button { 
+
+    width: 100%; 
+
+    font-size: 1.1em; 
+
+    padding: 15px; 
+
+  } 
+
+ 
+
+  table { 
+
+    font-size: 0.9em; 
+
+  } 
+
+} 
+
+ 
